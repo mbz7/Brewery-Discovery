@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_04_235643) do
+ActiveRecord::Schema.define(version: 2022_03_20_173028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,8 @@ ActiveRecord::Schema.define(version: 2022_03_04_235643) do
     t.string "brewery_name"
     t.string "brewery_logo"
     t.string "beer_types"
-    t.integer "flagship_beers"
     t.string "brewery_website"
     t.string "brewery_address"
-    t.boolean "is_favorite"
     t.string "brewery_phone_number"
     t.string "brewery_state"
     t.string "brewery_image"

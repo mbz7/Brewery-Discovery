@@ -4,8 +4,6 @@ class BreweryWithBeerSerializer < ActiveModel::Serializer
              :brewery_website,
              :brewery_logo,
              :brewery_address,
-             :is_favorite,
-             :brewery_phone_number,
-             :flagship_beers
+             :brewery_phone_number
   has_many :beers
 end

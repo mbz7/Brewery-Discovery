@@ -14,12 +14,12 @@ function BreweryCard({
 }) {
   return (
     <>
-    {/* margin-bottom, margin-top */}
+      {/* margin-bottom, margin-top */}
       <Col sm={12} md={12} lg={6} className="gap-3 mb-5 mt-5">
         <Card
           as={Link}
           className="card-div mx-auto"
-          onClick={(e) => setBrewery(id)}
+          // onClick={(e) => setBrewery(id)}
           to={`/breweries/${id}`}
         >
           <Card.Img className="h-100 card-img-filter" src={image} alt="" />
@@ -35,8 +35,8 @@ function BreweryCard({
                 variant="warning w-50"
                 className="mx-auto"
                 as={Link}
-                onClick={(e) => setBrewery(id)}
-                to={`/brewery/${id}`}
+                // onClick={(e) => setBrewery(id)}
+                to={`/breweries/${id}`}
               >
                 View Beers On Tap!
                 {/* <p className="p-2 text-light">On Tap Now!</p> */}

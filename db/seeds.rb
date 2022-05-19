@@ -6,7 +6,7 @@ Beer.destroy_all
 User.destroy_all
 
 # create a couple test users as seed data
-User.create(username: 'test', password: 'test')
+# User.create(username: 'test', password: 'test')
 
 puts '🏭 Creating breweries...'
 # MATTHEW'S BREWERIES
@@ -1812,7 +1812,7 @@ a142 =
   )
 
 puts 'Creating users...'
-u1 = User.create!(username: 'test', password_digest: 'test')
+# u1 = User.create!(username: 'test', password_digest: 'test')
 
 puts 'Finalizing seed data...'
 sleep 2

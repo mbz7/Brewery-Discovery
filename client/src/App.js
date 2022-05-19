@@ -9,10 +9,12 @@ import Signup from "./pages/Signup";
 import Brewery from "./pages/Brewery";
 import MapContainer from "./components/MapContainer";
 import UserPage from "./pages/UserPage";
+import BeerCardList from "./components/BeerCardList";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
   const [brewery, setBrewery] = useState("");
+
   //>> Logout
   function handleLogout(e) {
     fetch("/logout", {
@@ -39,7 +41,6 @@ function App() {
         {/* Navbar with Logo, Links, and login/logout */}
         <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
           <Container fluid className="mx-3 align-items-center me-auto">
-            
             <Navbar.Brand as={Link} to="/home">
               <h3 className="mt-2 text-warning"> Brewery Discovery</h3>
             </Navbar.Brand>
@@ -122,8 +123,8 @@ function App() {
             element={<Reviews currentUser={currentUser} />}
           />
           <Route
-            path={`/breweries/${brewery}`}
-            element={<Brewery brewery={brewery} currentUser={currentUser} />}
+            path="/breweries/:id"
+            element={<BeerCardList currentUser={currentUser} />}
           />
           <Route path="/map" element={<MapContainer />} />
           <Route
