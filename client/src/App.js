@@ -41,28 +41,34 @@ function App() {
         {/* Navbar with Logo, Links, and login/logout */}
         <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
           <Container fluid className="mx-3 align-items-center me-auto">
-            <Navbar.Brand as={Link} to="/home">
-              <h3 className="mt-2 text-warning"> Brewery Discovery</h3>
+            <Navbar.Brand as={Link} to="/">
+              <h3 className="mt-2 text-warning nav-logo"> Brewery Discovery</h3>
             </Navbar.Brand>
-            <div className="">
+            <div className="nav-links">
               <Navbar.Toggle aria-controls="navbarScroll" />
               <Navbar.Collapse id=" navbarScroll">
                 <Nav className="me-auto text-left" navbarScroll>
-                  <Nav.Link className="mx-2" as={Link} to="/home">
+                  <Nav.Link className="mx-2" as={Link} to="/">
                     Home
                   </Nav.Link>
                   <Nav.Link className="mx-2" as={Link} to="/map">
                     Map
                   </Nav.Link>
-                  <Nav.Link className="mx-2" as={Link} to="/reviews">
+                  {/* <Nav.Link className="mx-2" as={Link} to="/reviews">
                     Mini-Fridge
-                  </Nav.Link>
-                  <Nav.Link className="mx-2" as={Link} to="/userpage">
-                    Profile
-                  </Nav.Link>
+                  </Nav.Link> */}
+                  {!currentUser ? (
+                    <Nav.Link as={Link} disabled={true} to="/userpage">
+                      Account
+                    </Nav.Link>
+                  ) : (
+                    <Nav.Link as={Link} to="/userpage">
+                      Account
+                    </Nav.Link>
+                  )}
 
                   <div>
-                    {/* Ternary used for distplaying Login/Logout button */}
+                    {/* Ternary used for displaying Login/Logout button */}
                     {!currentUser ? (
                       <Button
                         className="mx-2 nav-login-btn"
@@ -94,7 +100,7 @@ function App() {
         <Routes>
           <Route
             className={("inner", "outer")}
-            path="/"
+            path="/login"
             element={
               <Login
                 setCurrentUser={setCurrentUser}
@@ -115,13 +121,14 @@ function App() {
           />
 
           <Route
-            path="/home"
+            path="/"
             element={<Home currentUser={currentUser} setBrewery={setBrewery} />}
           />
-          <Route
+          {/* Reviews/Mini-Fridge disabled for demo */}
+          {/* <Route
             path="/reviews"
             element={<Reviews currentUser={currentUser} />}
-          />
+          /> */}
           <Route
             path="/breweries/:id"
             element={<BeerCardList currentUser={currentUser} />}

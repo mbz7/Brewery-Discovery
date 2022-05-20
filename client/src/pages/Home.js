@@ -19,60 +19,60 @@ function Home({ currentUser, setBrewery }) {
 
   return (
     <>
-      {currentUser ? (
-        <div>
-          <Container fluid className="container-home-fluid bg-light">
-            <div className="home-jumbotron d-flex flex-column justify-content-center">
-              <div className="overlay"></div>
-              <div className="jumbotron-inner">
-                <div className="h-50 d-flex flex-column justify-content-center text-light">
-                  <h2 className="p-2 text-center">
-                    {currentUser ? `Hello, ${currentUser.first_name}!` : ""}
-                  </h2>
-                  <Col className="text-center">
-                    <h3>Welcome To The Brewery Discovery Project</h3>
-                    <p className="pt-2 text-lg">
-                      Search for a brewery by name or location below
-                    </p>
-                  </Col>
-                  <Col lg={5} className="mx-auto search-bar">
-                    <Search
-                      brewerySearch={brewerySearch}
-                      brewerySetter={setBrewerySearch}
-                      stateSearch={stateSearch}
-                      stateSetter={setStateSearch}
-                    />
-                  </Col>
-                </div>
+      {/* {currentUser ? ( */}
+      <div>
+        <Container fluid className="container-home-fluid bg-light">
+          <div className="home-jumbotron d-flex flex-column justify-content-center">
+            <div className="overlay"></div>
+            <div className="jumbotron-inner">
+              <div className="h-50 d-flex flex-column justify-content-center text-light">
+                <h2 className="p-2 text-center">
+                  {currentUser ? `Hello, ${currentUser.first_name}!` : ""}
+                </h2>
+                <Col className="text-center">
+                  <h3>Welcome To The Brewery Discovery Project</h3>
+                  <p className="pt-2 text-lg">
+                    Search for a brewery by name or location below
+                  </p>
+                </Col>
+                <Col lg={5} className="mx-auto search-bar">
+                  <Search
+                    brewerySearch={brewerySearch}
+                    brewerySetter={setBrewerySearch}
+                    stateSearch={stateSearch}
+                    stateSetter={setStateSearch}
+                  />
+                </Col>
               </div>
             </div>
-            <div className="brewery-list-container pt-5">
-              <Container>
-                <div className="text-center">
-                  <h1>BREWERY LIST</h1>
-                  <p>Click on a brewery below to view the beer list</p>
-                  <hr className="w-75 mx-auto mt-5" />
-                </div>
+          </div>
+          <div className="brewery-list-container pt-5">
+            <Container>
+              <div className="text-center">
+                <h1>BREWERY LIST</h1>
+                <p>Click on a brewery below to view the beer list</p>
+                <hr className="w-75 mx-auto mt-5" />
+              </div>
 
-                <Row>
-                  <Col>
-                    <BreweryCardList
-                      breweries={breweries}
-                      brewerySearch={brewerySearch}
-                      brewerySetter={setBrewerySearch}
-                      stateSearch={stateSearch}
-                      stateSetter={setStateSearch}
-                      setBrewery={setBrewery}
-                    />
-                  </Col>
-                </Row>
-              </Container>
-            </div>
-          </Container>
-        </div>
-      ) : (
+              <Row>
+                <Col>
+                  <BreweryCardList
+                    breweries={breweries}
+                    brewerySearch={brewerySearch}
+                    brewerySetter={setBrewerySearch}
+                    stateSearch={stateSearch}
+                    stateSetter={setStateSearch}
+                    setBrewery={setBrewery}
+                  />
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        </Container>
+      </div>
+      {/* ) : (
         <Navigate to="/" />
-      )}
+      )} */}
     </>
   );
 }

@@ -29,6 +29,17 @@ p {
 
 /* ________________________________________________________________ */
 
+/* Navbar Styles */
+
+.nav-logo {
+  margin-left: 100px;
+}
+
+.nav-links {
+  margin-right: 100px;
+  letter-spacing: 2px;
+}
+
 /* Home Beer List Page */
 
 .container-home-fluid {
